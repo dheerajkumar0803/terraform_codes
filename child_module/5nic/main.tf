@@ -16,6 +16,7 @@ data "azurerm_subnet" "snet" {
   resource_group_name  = each.value.resource_group_name
 }
 
+
 resource "azurerm_network_interface" "nic" {
   for_each            = var.nic_map
   name                = each.value.name
@@ -37,21 +38,21 @@ resource "azurerm_public_ip" "pip" {
   location            = each.value.location
   resource_group_name = each.value.resource_group_name
   allocation_method   = "Dynamic"
-  
+
 }
 
 
 resource "azurerm_linux_virtual_machine" "vm" {
-  for_each = var.nic_map
-  name                = each.value.vm_name
-  resource_group_name = each.value.resource_group_name
-  location            = each.value.location
-  size                = each.value.vm_size
-  admin_username      = "adminuser"
-  admin_password      = "P@ssw0rd123"
+  for_each                        = var.nic_map
+  name                            = each.value.vm_name
+  resource_group_name             = each.value.resource_group_name
+  location                        = each.value.location
+  size                            = each.value.vm_size
+  admin_username                  = "dheerajuser"
+  admin_password                  = "Dheeraj@12345"
   disable_password_authentication = false
-  network_interface_ids = [azurerm_network_interface.nic[each.key].id,]
- 
+  network_interface_ids           = [azurerm_network_interface.nic[each.key].id, ]
+
   os_disk {
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
@@ -62,5 +63,5 @@ resource "azurerm_linux_virtual_machine" "vm" {
     sku       = "18.04-LTS"
     version   = "latest"
   }
-  
+
 }
