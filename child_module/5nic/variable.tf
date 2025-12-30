@@ -1,4 +1,4 @@
-variable "nic_map" {
-    type = map(any)
+# variable "nic_map" {
+#     type = map(any)
   
-}
+# }

@@ -4,3 +4,4 @@ resource "azurerm_resource_group" "patna_rg" {
   name     = each.value.name
   location = each.value.location
 }
+

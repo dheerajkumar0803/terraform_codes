@@ -1,4 +1,4 @@
-variable "bastion_map" {
-    type = map(any)
+# variable "bastion_map" {
+#     type = map(any)
   
-}
+# }

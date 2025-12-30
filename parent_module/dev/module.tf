@@ -21,23 +21,23 @@ module "snet_module_04" {
   depends_on = [module.vnet_module_03]
 }
 
-module "nic_vm_module_05" {
-  source     = "../../child_module/5nic"
-  nic_map    = var.nic_map
-  depends_on = [module.snet_module_04]
-}
+# module "nic_vm_module_05" {
+#   source     = "../../child_module/5nic"
+#   nic_map    = var.nic_map
+#   depends_on = [module.snet_module_04]
+# }
 
-module "keyvault_module_06" {
-  source       = "../../child_module/6keyvault"
-  keyvault_var = var.keyvault_var6
-  depends_on   = [module.rg_module_01]
+# module "keyvault_module_06" {
+#   source       = "../../child_module/6keyvault"
+#   keyvault_var = var.keyvault_var6
+#   depends_on   = [module.rg_module_01]
 
-}
+# }
 
-module "bastion_module_07" {
-  source      = "../../child_module/7bastion"
-  bastion_map = var.bastion_var7
-  depends_on  = [module.nic_vm_module_05]
+# module "bastion_module_07" {
+#   source      = "../../child_module/7bastion"
+#   bastion_map = var.bastion_var7
+#   depends_on  = [module.nic_vm_module_05]
 
-}
+# }
 

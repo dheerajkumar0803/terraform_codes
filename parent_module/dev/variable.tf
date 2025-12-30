@@ -14,15 +14,15 @@ variable "snet4_var4" {
   type = map(any)
 }
 
-variable "nic_map" {
-  type = map(any)
-}
+# variable "nic_map" {
+#   type = map(any)
+# }
 
-variable "keyvault_var6" {
-  type = map(any)
-}
+# variable "keyvault_var6" {
+#   type = map(any)
+# }
 
-variable "bastion_var7" {
-  type = map(any)
+# variable "bastion_var7" {
+#   type = map(any)
 
-}
+# }

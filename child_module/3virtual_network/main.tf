@@ -6,5 +6,6 @@ resource "azurerm_virtual_network" "patna_vnet" {
   resource_group_name = each.value.resource_group_name
   address_space       = each.value.address_space
 
+
 }
 
